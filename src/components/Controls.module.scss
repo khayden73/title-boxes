@@ -10,4 +10,33 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    button {
+        --text: "pause";
+        --bg: yellow;
+        border: none;
+        background-color: var(--bg);
+        border-radius: 2rem;
+        padding: 1rem 2rem;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        &::before {
+            content: var(--text);
+        }
+
+        &:hover {
+            --bg: orange;
+            cursor: pointer;
+        }
+
+        &.paused {
+            --bg: white;
+            --text: "play";
+            &:hover {
+                --bg: cyan;
+            }
+        }
+    }
 }

@@ -7,8 +7,10 @@ export const TitleBox = (props) => {
         <figure className={styles["title-box"]}>
             <figcaption className={styles["caption"]}>
                 <span className={styles.title}>{title}</span>
-                {names.map((name) => (
-                    <span className={styles.name}>{name}</span>
+                {names.map((name, index) => (
+                    <span key={index} className={styles.name}>
+                        {name}
+                    </span>
                 ))}
             </figcaption>
         </figure>

@@ -19,8 +19,8 @@ const boxes = [
 export const TitleBoxes = () => {
     return (
         <div className={styles["title-boxes"]}>
-            {boxes.map((box) => (
-                <TitleBox {...box} />
+            {boxes.map((box, index) => (
+                <TitleBox key={index} {...box} />
             ))}
         </div>
     );
