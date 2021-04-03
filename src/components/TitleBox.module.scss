@@ -13,15 +13,6 @@
     animation: boxTitles var(--boxtitle-duration) ease-in 1s 1;;
     animation-play-state: var(--animation-play-state);
 
-    &:first-child {
-        opacity: 1;
-    }
-
-    /*&.animated {
-        --box-animation: boxTitles var(--boxtitle-duration) ease-in 1s 1;
-        animation-play-state: var(--animation-play-state);
-    }*/
-
     .caption {
         width: 100%;
         height: 100%;
