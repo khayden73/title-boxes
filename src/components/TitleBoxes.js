@@ -1,17 +1,20 @@
-import { TitleBox } from "./TitleBox";
+import { useState } from "react";
+import cn from "classnames";
 import styles from "./TitleBoxes.module.scss";
-import { boxes } from "../lib/boxes";
 import { Controls } from "./Controls";
+import { Screen } from "./Screen";
 
 export const TitleBoxes = () => {
+    const [animating, setAnimating] = useState(false);
+
+    const css = cn(styles["title-boxes"], {
+        animating: animating,
+    });
+
     return (
-        <div className={styles["title-boxes"]}>
-            <section className={styles["title-boxes-container"]}>
-                {boxes.map((box, index) => (
-                    <TitleBox key={index} {...box} />
-                ))}
-            </section>
-            <Controls />
+        <div className={css}>
+            <Screen animating={animating} />
+            <Controls play={() => setAnimating(true)} pause={() => setAnimating(false)} />
         </div>
     );
 };

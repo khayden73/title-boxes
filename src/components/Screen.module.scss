@@ -1,0 +1,9 @@
+.screen {
+    background-color: rgba(cyan, 0.9); // fpo
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &.animating {
+        background-color: chartreuse;
+    }
+}
