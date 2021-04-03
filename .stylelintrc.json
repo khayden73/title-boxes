@@ -1,0 +1,10 @@
+{
+    "extends": "stylelint-config-sass-guidelines",
+    "rules": {
+        "selector-pseudo-class-no-unknown": [true, {
+            "ignorePseudoClasses": ["is"]
+        }],
+        "indentation": [ 4 ],
+        "string-quotes": "double"
+    }
+}
