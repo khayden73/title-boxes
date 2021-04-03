@@ -1,9 +1,15 @@
+:root {
+    --animation-play-state: running;
+}
+
 .screen {
-    background-color: rgba(cyan, 0.9); // fpo
+    --bg: cyan;
+    background-color: var(--bg); // fpo
     display: grid;
     grid-template-columns: 1fr;
 
-    &.animating {
-        background-color: chartreuse;
+    &.paused {
+        --bg: chartreuse;
+        --animation-play-state: paused;
     }
 }

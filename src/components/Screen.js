@@ -4,9 +4,9 @@ import { TitleBox } from "./TitleBox";
 import styles from "./Screen.module.scss";
 
 export function Screen(props) {
-    const { animating = false } = props;
+    const { paused = true } = props;
     const css = cn(styles.screen, {
-        [`${styles.animating}`]: animating,
+        [`${styles.paused}`]: paused,
     });
     return (
         <main className={css}>
