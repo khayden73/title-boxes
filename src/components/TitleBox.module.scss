@@ -1,4 +1,8 @@
+@use "../scss/animations";
+
 .title-box {
+    --box-animation: none;
+    --animation-play-state: paused;
     color: white;
     border: 2px solid currentColor;
     grid-column: 1;
@@ -8,9 +12,14 @@
     margin: 0;
     padding: 1rem 3rem;
     opacity: 0;
+    animation: var(--box-animation);
 
     &:first-child {
         opacity: 1;
+    }
+
+    &.animated {
+        --box-animation: boxTitles var(--boxtitle-duration) ease-in 1s 1;
     }
 
     .caption {
