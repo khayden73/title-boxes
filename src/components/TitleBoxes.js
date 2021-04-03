@@ -1,27 +1,17 @@
 import { TitleBox } from "./TitleBox";
 import styles from "./TitleBoxes.module.scss";
-
-const boxes = [
-    {
-        title: "director",
-        names: ["john doe"],
-    },
-    {
-        title: "writers",
-        names: ["john smith", "jane doe"],
-    },
-    {
-        title: "created by",
-        names: ["stan lee"],
-    },
-];
+import { boxes } from "../lib/boxes";
+import { Controls } from "./Controls";
 
 export const TitleBoxes = () => {
     return (
         <div className={styles["title-boxes"]}>
-            {boxes.map((box, index) => (
-                <TitleBox key={index} {...box} />
-            ))}
+            <section className={styles["title-boxes-container"]}>
+                {boxes.map((box, index) => (
+                    <TitleBox key={index} {...box} />
+                ))}
+            </section>
+            <Controls />
         </div>
     );
 };
