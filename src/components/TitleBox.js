@@ -2,9 +2,22 @@ import PropTypes from "prop-types";
 import styles from "./TitleBox.module.scss";
 
 export const TitleBox = (props) => {
-    const { title, names } = props;
+    console.log("[TitleBox] props: ", props);
+    const { title, names, number } = props;
+    const onEnd = () => {
+        if (typeof finished === "function") {
+            // finished();
+        }
+    };
+
+    const onStart = () => {
+        if (typeof started === "function") {
+            // started();
+        }
+    };
+
     return (
-        <figure className={styles["title-box"]}>
+        <figure className={styles["title-box"]} data-number={number} onAnimationStart={onStart} onAnimationEnd={onEnd}>
             <figcaption className={styles["caption"]}>
                 <span className={styles.title}>{title}</span>
                 {names.map((name, index) => (
@@ -18,6 +31,7 @@ export const TitleBox = (props) => {
 };
 
 TitleBox.propTypes = {
+    number: PropTypes.number,
     title: PropTypes.string,
     names: PropTypes.arrayOf(PropTypes.string),
 };

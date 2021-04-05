@@ -4,12 +4,13 @@ import { Controls } from "./Controls";
 import { Screen } from "./Screen";
 
 export const TitleBoxes = () => {
-    const [paused, setPaused] = useState(true);
+    // const [paused, setPaused] = useState(true);
+    const [play, setPlay] = useState(false);
 
     return (
         <div className={styles["title-boxes"]}>
-            <Screen paused={paused} />
-            <Controls pause={() => setPaused(true)} play={() => setPaused(false)} />
+            <Screen play={play} />
+            <Controls play={() => setPlay(true)} />
         </div>
     );
 };

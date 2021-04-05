@@ -3,7 +3,7 @@ import cn from "classnames";
 import styles from "./Controls.module.scss";
 
 export const Controls = (props) => {
-    const [paused, setPaused] = useState(true);
+    const [start, setStart] = useState(false);
     const play = () => {
         if (typeof props.play === "function") {
             props.play();
@@ -11,29 +11,19 @@ export const Controls = (props) => {
         }
         alert("no play function attached!");
     };
-    const pause = () => {
-        if (typeof props.pause === "function") {
-            props.pause();
-            return;
-        }
-        alert("no pause function attached!");
-    };
     const clicked = () => {
-        console.log("[Controls] clicked: ", paused);
-        if (paused) {
+        if (!start) {
+            setStart(true);
             play();
-        } else {
-            pause();
         }
-        setPaused(!paused);
     };
     const btnCss = cn({
-        [`${styles.paused}`]: paused,
+        [`${styles.play}`]: play,
     });
-    console.log("[Controls] paused: ", paused);
+    console.log("[Controls] start: ", start);
     return (
         <div className={styles.controls}>
-            <button onClick={clicked} className={btnCss} />
+            <button onClick={clicked} className={btnCss} disabled={!play} />
         </div>
     );
 };

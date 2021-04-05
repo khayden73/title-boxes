@@ -12,7 +12,7 @@
     justify-content: center;
 
     button {
-        --text: "pause";
+        --text: "play";
         --bg: yellow;
         border: none;
         background-color: var(--bg);
@@ -31,12 +31,12 @@
             cursor: pointer;
         }
 
-        &.paused {
+        /*&.play {
             --bg: white;
             --text: "play";
             &:hover {
                 --bg: cyan;
             }
-        }
+        }*/
     }
 }

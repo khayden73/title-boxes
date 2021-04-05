@@ -4,14 +4,17 @@ import { TitleBox } from "./TitleBox";
 import styles from "./Screen.module.scss";
 
 export function Screen(props) {
-    const { paused = true } = props;
+    const { play = false } = props;
+
+    console.log("[Screen] play", play);
+
     const css = cn(styles.screen, {
-        [`${styles.paused}`]: paused,
+        [`${styles.play}`]: play,
     });
     return (
         <main className={css}>
             {boxes.map((box, index) => (
-                <TitleBox key={index} {...box} />
+                <TitleBox key={index} number={index} {...box} />
             ))}
         </main>
     );
